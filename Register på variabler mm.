@@ -1,0 +1,20 @@
+GUI 
+ContactPanel:
+btnNew – JButton för att skapa en ny konversation
+contactsTable – JTable där kontakterna ligger 
+onlineTable – JTable där användare som är online ligger 
+
+Controller: 
+contactList – ArrayList där kontakterna sparas
+test – Stringarray (hårdkodad) ska representera de användarna som är online
+
+ConversationPanel: 
+conversationList – JList där alla konversationerna ligger
+conversation – ArrayList där konversationerna sparas 
+
+Message Panel: 
+lblChatWith – JLabel där man ska se vilken konversation man är “inne på” 
+btnSend – JButton, sendknapp
+profile – JLabel där profilbilden syns
+profilePic – ImageIcon  
+btnAddContact – JButton som lägger till användare i contactList
