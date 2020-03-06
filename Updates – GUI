@@ -1,0 +1,55 @@
+conversationPanel: 
+private JButton btnLogOut = new JButton("Logga ut");
+
+//I metoden setUpPanel
+btnLogOut.addActionListener(new ButtonListener());
+
+private class ButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(null, "Du loggas ut!");
+            controller.setVisible("view", false);
+            controller.goBackToStartFrame();
+
+        }
+    }
+    
+    
+
+controller: 
+//Ny metod - sätter JFrame visible eller inte
+public void setVisible(String frame, boolean visible) {
+        switch(frame) {
+            case "view":
+                view.setVisible(visible);
+                break;
+            case "logInFrame":
+                logInFrame.setVisible(visible);
+                break;
+            case "createNewUser":
+                createNewUser.setVisible(visible);
+                break;
+            default:
+                break;
+        }
+    }
+    
+//Uppdaterade metoder så att de använder sig av setVisible
+public void logIn() {
+        setVisible("startFrame", false);
+        logInFrame = new LogInFrame(this);
+        logInFrame.setTitle("Logga in");
+    }
+    
+public void openChatSite() {
+        view = new MainFrame(this);
+    }
+
+    public void goBackToStartFrame() {
+        setVisible("startFrame", true);
+    }
+
+    public void newUser() {
+        setVisible("startFrame", false);
+        createNewUser = new CreateNewUser(this);
+        logInFrame.setTitle("Skapa ny användare");
+    }
